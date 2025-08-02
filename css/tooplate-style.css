@@ -7,7 +7,7 @@ https://www.tooplate.com/view/2097-pop
 */
 
 body {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: "Times New Roman", Helvetica, Arial, sans-serif;
   font-size: 19px;
   font-weight: 300;
   color: white;
@@ -59,7 +59,7 @@ p {
 .tm-main-content {
   display: flex;
   align-items: center;
-  padding: 50px 15px;
+  padding: 5px 15px;
   position: absolute;
   left: 0;
   right: 0;
@@ -71,11 +71,11 @@ p {
 .tm-site-header-col {
   display: flex;
   align-items: center;
+  left: -100px;
 }
 
 .tm-site-header {
-  margin: 10px;
-  text-align: right;
+  text-align: left;
   width: 100%;
 }
 
@@ -87,8 +87,7 @@ p {
 .tm-nav li {
   list-style: none;
   display: inline-block;
-  border: 1px solid white;
-  float: left;
+  border: 1px solid white; 
   margin: 10px;
 }
 
@@ -108,6 +107,7 @@ p {
   position: absolute;
   left: 0;
   right: 0;
+  text-transform: uppercase;
 }
 
 .fa-3x {
@@ -134,6 +134,7 @@ p {
 }
 .content {
   max-width: 370px;
+  margin: 0 auto;
 }
 .grid {
   display: grid;
@@ -338,6 +339,7 @@ footer {
   background-color: rgba(0, 0, 0, 0.6);
   display: inline-block;
   padding: 10px 30px;
+  width: 70%;
 }
 
 a,
