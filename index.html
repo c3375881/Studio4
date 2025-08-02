@@ -62,26 +62,6 @@ https://www.tooplate.com/view/2097-pop
       openSection(openParam);
     }
   }
-
-  // run after DOM ready (the template already uses jQuery ready; safe to hook)
-  document.addEventListener('DOMContentLoaded', parseAndOpen);
-
-  function openSection(name) {
-  const targetId = sectionMap[name.toLowerCase()];
-  if (!targetId) return;
-  const tryOpen = () => {
-    const container = document.getElementById(targetId);
-    if (!container) return;
-    const trigger = container.querySelector('.tm-nav-link');
-    if (trigger) {
-      trigger.dispatchEvent(new Event('click', { bubbles: true }));
-    }
-  };
-  // try immediately and again shortly after if needed
-  tryOpen();
-  setTimeout(tryOpen, 300);
-}
-
 </script>
 
 
