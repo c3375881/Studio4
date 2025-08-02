@@ -411,6 +411,9 @@ p:last-child {
     position: relative;
     bottom: 0;
   }
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 across on tablets */
+  }
 }
 
 @media (max-width: 419px) {
