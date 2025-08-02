@@ -411,9 +411,6 @@ p:last-child {
     position: relative;
     bottom: 0;
   }
-  .grid {
-    grid-template-columns: 1fr; /* single column on phone */
-  }
 }
 
 @media (max-width: 419px) {
