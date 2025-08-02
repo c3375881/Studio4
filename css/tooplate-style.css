@@ -10,7 +10,7 @@ body {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 19px;
   font-weight: 300;
-  color: white;
+  color: black;
   position: relative;
 }
 
@@ -206,7 +206,7 @@ p {
 }
 
 .details__bg--down {
-  background: #2c2a35;
+  background: white;
 }
 
 .details__bg {
