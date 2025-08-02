@@ -24,6 +24,67 @@ https://www.tooplate.com/view/2097-pop
     
 </head>
 
+<script>
+  // mapping friendly names to element IDs
+  const sectionMap = {
+    welcome: 'home-link',
+    team: 'team-link',
+    work: 'work-link',
+    contact: 'contact-link'
+  };
+
+  function openSection(name) {
+    const targetId = sectionMap[name.toLowerCase()];
+    if (!targetId) return;
+    const container = document.getElementById(targetId);
+    if (!container) return;
+
+    // depending on how the template opens the panel, simulate the user interaction
+    const trigger = container.querySelector('.tm-nav-link');
+    if (trigger) {
+      // some templates listen for click events on this element
+      trigger.dispatchEvent(new Event('click', { bubbles: true }));
+    }
+  }
+
+  // on load: check hash (#team) or query param (?open=team)
+  function parseAndOpen() {
+    // 1. hash support: #team, #work etc.
+    if (window.location.hash) {
+      const name = window.location.hash.slice(1); // remove '#'
+      openSection(name);
+      return;
+    }
+    // 2. query param support: ?open=contact
+    const params = new URLSearchParams(window.location.search);
+    const openParam = params.get('open');
+    if (openParam) {
+      openSection(openParam);
+    }
+  }
+
+  // run after DOM ready (the template already uses jQuery ready; safe to hook)
+  document.addEventListener('DOMContentLoaded', parseAndOpen);
+
+  function openSection(name) {
+  const targetId = sectionMap[name.toLowerCase()];
+  if (!targetId) return;
+  const tryOpen = () => {
+    const container = document.getElementById(targetId);
+    if (!container) return;
+    const trigger = container.querySelector('.tm-nav-link');
+    if (trigger) {
+      trigger.dispatchEvent(new Event('click', { bubbles: true }));
+    }
+  };
+  // try immediately and again shortly after if needed
+  tryOpen();
+  setTimeout(tryOpen, 300);
+}
+
+</script>
+
+
 <body>
     <div id="tm-bg"></div>
     <div id="tm-wrap">
@@ -100,7 +161,7 @@ https://www.tooplate.com/view/2097-pop
                                     </div>
                                 </div>
 
-                                <div class="grid__item">
+                                <div class="grid__item" id="work-link">
                                     <div class="product">
                                         <div class="tm-nav-link">
                                             <i class="fas fa-handshake fa-3x tm-nav-icon"></i>
@@ -138,7 +199,7 @@ https://www.tooplate.com/view/2097-pop
                                     </div>
                                 </div>
 
-                                <div class="grid__item">
+                                <div class="grid__item" id="contact-link">
                                     <div class="product">
                                         <div class="tm-nav-link">
                                             <i class="fas fa-comments fa-3x tm-nav-icon"></i>
