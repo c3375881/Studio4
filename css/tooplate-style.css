@@ -7,7 +7,7 @@ https://www.tooplate.com/view/2097-pop
 */
 
 body {
-  font-family: "Times New Roman", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 19px;
   font-weight: 300;
   color: white;
@@ -71,11 +71,10 @@ p {
 .tm-site-header-col {
   display: flex;
   align-items: center;
-  left: -100px;
 }
 
 .tm-site-header {
-  text-align: left;
+  text-align: right;
   width: 100%;
 }
 
@@ -339,7 +338,7 @@ footer {
   background-color: rgba(0, 0, 0, 0.6);
   display: inline-block;
   padding: 10px 30px;
-  width: 70%;
+  width: 95%;
 }
 
 a,
